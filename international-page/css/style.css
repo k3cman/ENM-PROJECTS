@@ -1,0 +1,153 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.bg .top-bar{
+    width:100%;
+    display: flex;
+
+}
+
+.brand img{
+    margin-left:30px;
+    margin-top:30px;
+}
+
+
+
+.bg{
+    margin-top:0;
+    margin-bottom:0;
+
+    height:800px;
+    text-align: center;
+    background-size:cover;
+    background-image:url('../img/bg.jpg');
+}
+
+
+.container{
+    width:1440px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+
+.bg h1{
+    padding:0;
+    margin:0;
+    text-align:center;
+    font-size:40px;
+    font-weight:700;
+    color:#fff;
+    text-shadow: 3px 5px 10px rgba(0,0,0,0.8);
+    padding-top:300px;
+    padding-bottom:50px;
+}
+.buttons{
+    text-align:center;
+}
+
+.buttons button{
+    padding:20px;
+    font-weight: 700;
+    border:0;
+    margin:0 10px 0 10px;
+    border-radius:3px;
+    font-size:15px;
+}
+
+.btn-white{
+    background:rgba(255,255,255,0.8);
+    color:#333;
+}
+
+.btn-blue{
+    background-color:rgba(32,91,156,0.8);
+    color:#fff;
+}
+
+.btn-blue:hover{
+    background-color:rgba(32,91,156,1);
+    color:#fff;
+
+}
+
+.btn-white:hover{
+    background:rgba(255,255,255,1);
+    color:#333;
+}
+.bg h3{
+    color:#fff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.flags ul{
+    text-align:center;
+    display:grid;
+    width:960px;
+    margin-left:auto;
+    margin-right:auto;
+    grid-template-columns:repeat(9, 1fr);
+    list-style: none;
+}
+
+.flags img{
+    height:40px;
+    opacity:0.7;
+    border-radius: 5px;
+}
+
+.flags img:hover{
+    opacity:1;
+}
+
+.flags a{
+    color:white;
+    text-decoration:none;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+}
+
+.text {
+    text-align:center;
+}
+.text h1{
+    color:#333;
+    font-size:30px;
+    font-weight:600;
+}
+.text p {
+    width:960px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.footer-contain{
+    width:960px;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:14px;
+    color:#333;
+    text-align:center;
+    background-color:#eeeeee;
+}
+
+.footer-contain ul{
+    list-style:none;
+    display:inline-block;
+    width:650px;
+    margin-left:auto;
+    margin-right:auto;
+    color:#437aaf;
+    text-decoration:underline;
+}
+
+.footer{
+    width:100%;
+    background-color:#eeeeee;
+}
+
+.footer-contain p{
+    padding-top:50px;
+}
