@@ -46,7 +46,7 @@
     	line-height: 100%;
 		}
 		
-		/* What it does: Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+		/* What it does: Fix for Yahoo mail table alignment bug. */
 		table {
 		  border-collapse: collapse;
 		  margin: 0 auto;
@@ -62,8 +62,8 @@
 			border-bottom: none !important;
     }
     
-    /* What it does: Overrides blue, underlined links auto-detected by iOS Mail. */
-    /* More Info: https://litmus.com/blog/update-banning-blue-links-on-ios-devices */
+    /* What it does: Overrides blue, underlined link auto-detected by iOS Mail. */
+    /* Create a class for every link style needed; this template needs only one for the link in the footer. */
     .mobile-link--footer a {
 	    color: #666666 !important;
     }
@@ -75,174 +75,222 @@
 			text-decoration:none !important;
 		}
 
-		/* What it does: Apple Mail doesn't support max-width, so a media query constrains the email container width. */
-		@media only screen and (min-width: 601px) {
-			.email-container {
-				width: 600px !important;
-			}
-		}
-          
-		/* What it does: Apple Mail doesn't support max-width, so a media query constrains the email container width. */
-		@media only screen and (max-width: 600px) {
+		/* Media Queries */
+    @media screen and (max-device-width: 600px), screen and (max-width: 600px) {
+			
+			/* What it does: Overrides email-container's desktop width and forces it into a 100% fluid width. */
 			.email-container {
 				width: 100% !important;
-				max-width: none !important;
 			}
+
+			/* What it does: Forces images to resize to the width of their container. */
+			img[class="fluid"],
+			img[class="fluid-centered"] {
+				width: 100% !important;
+				max-width: 100% !important;
+				height: auto !important;
+				margin: auto !important;
+			}
+			/* And center justify these ones. */
+			img[class="fluid-centered"] {
+				margin: auto !important;
+			}
+
+			/* What it does: Forces table cells into full-width rows. */
+			td[class="stack-column"],
+			td[class="stack-column-center"] {
+				display: block !important;
+				width: 100% !important;
+				direction: ltr !important;
+			}
+			/* And center justify these ones. */
+			td[class="stack-column-center"] {
+				text-align: center !important;
+			}
+ 
+ 			/* Data Table Styles */
+ 			/* What it does: Hides table headers */
+ 			td[class="data-table-th"] {
+	 			display: none !important;
+ 			}
+ 			/* What it does: Change the look and layout of the remaining td's */
+ 			td[class="data-table-td"],
+ 			td[class="data-table-td-title"] {
+				display: block !important;
+				width: 100% !important;
+				border: 0 !important;
+ 			}
+ 			/* What it does: Changes the appearance of the first td in each row */
+ 			td[class="data-table-td-title"] {
+	 			font-weight: bold;
+	 			color: #333333;
+				padding: 10px 0 0 0 !important;
+	 			border-top: 2px solid #eeeeee !important;
+ 			}
+ 			/* What it does: Changes the appearance of the other td's in each row */
+ 			td[class="data-table-td"] {
+				padding: 5px 0 0 0 !important
+ 			}
+ 			/* What it does: Provides a visual divider between table rows. In this case, a bit of extra space. */
+ 			td[class="data-table-mobile-divider"] {
+				display: block !important;
+				height: 20px;
+ 			}
+ 			/* END Data Table Styles */
+
 		}
-          
+		          
   </style>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#222222" style="margin:0; padding:0; -webkit-text-size-adjust:none; -ms-text-size-adjust:none;">
-<table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" bgcolor="#222222" style="border-collapse:collapse;"><tr><td>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#ccc" style="margin:0; padding:0; -webkit-text-size-adjust:none; -ms-text-size-adjust:none;">
+<table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" bgcolor="#c9c9c9" style="border-collapse:collapse;"><tr><td>
 
 	<!-- Visually Hidden Preheader Text : BEGIN -->
 	<div style="display:none;font-size:1px;color:#222222;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide: all;">
-		(Optional) This text will appear in the inbox preview, but not the email body.
+		Vaš račun sa sajta Enmon
 	</div>
 	<!-- Visually Hidden Preheader Text : END -->
 
-  <!-- Outlook and Lotus Notes don't support max-width but are always on desktop, so we can enforce a wide, fixed width view. -->
-  <!-- Beginning of Outlook-specific wrapper : BEGIN -->
-	<!--[if (gte mso 9)|(IE)]>
-  <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-      <td>
-  <![endif]-->
-  <!-- Beginning of Outlook-specific wrapper : END -->
-
   <!-- Email wrapper : BEGIN -->
-  <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center" style="max-width:600px; margin:auto;" class="email-container">
+  <table border="0" width="600" cellpadding="0" cellspacing="0" align="center" style="width:600px; margin: auto;" class="email-container">
     <tr>
     	<td>
 
         <!-- Logo + Links : BEGIN -->
         <table border="0" width="100%" cellpadding="0" cellspacing="0">
+        	<tr><td height="5" style="font-size: 0; line-height: 0;">&nbsp;</td></tr>
           <tr>
-            <td valign="middle" style="padding:10px 0; text-align:left;" width="150">
-              <img src="http://placehold.it/150x50" alt="alt text" width="150" height="50" border="0" align="left">
+            <td valign="middle" width="150" style="padding:5px 0; text-align:left; line-height: 1;" class="stack-column-center">
+              <img src="http://www.enmongroup.com/data/webshopSr/logo.png" alt="alt text" width="150" height="50" border="0" style="display: block; margin: auto;">
             </td>
-            <td valign="middle" style="padding:10px 0; text-align:right; line-height:1.1; font-family: sans-serif; font-size: 13px; color: #999999;">
-              A mobile-friendly template with no media queries.
+            <td valign="middle" style="padding:5px 0; text-align:right; line-height:1.1; font-family: sans-serif; font-size: 13px; color: #999999;" class="stack-column-center">
+              
             </td>
           </tr>
+        	<tr><td height="5" style="font-size: 0; line-height: 0;">&nbsp;</td></tr>
         </table>
         <!-- Logo + Links : END -->
   
         <!-- Main Email Body : BEGIN -->
         <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
-      
+					<tr>
+            <td  style="padding-top:12px" valign="middle" align="left" height="50" bgcolor="#fff">
+              <img src="http://www.enmongroup.com/data/webshopSr/logo.png" alt="alt text" width="150" height="50" border="0" style="display: block; margin: auto;">
+            </td>
+          </tr>
           <!-- Single Fluid Image, No Crop : BEGIN -->
           <tr>
-            <td valign="middle" align="center" style="padding-top:4%;">
-              <img src="http://placehold.it/320" alt="alt text" height="320" width="320" align="center" border="0" style="margin: auto;">
+            <td valign="middle" align="center" height="50" bgcolor="#034ea2">
+              <h3 style="color:white; font-family:sans-serif">Vaša porudžbina</h3>
             </td>
           </tr>
           <!-- Single Fluid Image, No Crop : END -->
 
           <!-- Full Width, Fluid Column : BEGIN -->
           <tr>
-            <td style="padding: 4%; font-family: sans-serif; font-size: 18px; line-height: 1.3; color: #666666;">
-              Ulla nec est tristique, tempor lacus eu, aliquam erat. Cras tristique, arcu ac tristique hendrerit, urna diam mollis libero, vitae gravida nisi lectus in leo. Aenean eu ligula id nisi euismod dapibus et eu mauris. Donec quis dictum velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+            <td style="padding: 4%; font-family: sans-serif; font-size: 14px; line-height: 1; color: #666666;">
+							Poštovani (IME), <br><br>
+							Ovo je automatski generisan email za vašu ENMON porudžbinu od dana 01/06/2018.
+							<br><br>Vašu porudžbinu možete pratiti na <a href="#">ovom linku</a>.
             </td>
           </tr>
           <!-- Full Width, Fluid Column : END -->
-      		
-      		<!-- 2 x 2 grid : BEGIN -->
+      		<!-- Data Table : BEGIN -->
           <tr>
-            <td>
-              <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
-                <tr>
-	                <td width="4%" style="font-size: 0;line-height: 0;">&nbsp;</td>
-                  <td valign="top" width="44%" style="padding: 4% 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #666666; text-align: center;">
-                    <img src="http://placehold.it/160" alt="alt text" height="160" width="160" border="0" align="center">
-                    <br><br>
-                    Mauris urna nibh, dictum quis sollicitudin a, placerat eu ipsum.
-                    <br><br>
-										<table cellspacing="0" cellpadding="0" border="0" align="center" class="button" style="margin: auto;">
-											<tr>
-												<td style="border-radius: 3px; background: #222222; text-align: center;">
-													<a href="http://www.google.com" style="background: #222222; border: 15px solid #222222; padding: 0 10px;color: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 1; text-align: center; text-decoration: none; display: block; border-radius: 3px;">
-														<b><!--[if mso]>&nbsp;&nbsp;&nbsp;&nbsp;<![endif]-->A Button<!--[if mso]>&nbsp;&nbsp;&nbsp;&nbsp;<![endif]--></b>
-													</a>
-												</td>
-											</tr>
-										</table>
-                  </td>
-	                <td width="4%" style="font-size: 0;line-height: 0;">&nbsp;</td>
-                  <td valign="top" width="44%" style="padding: 4% 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #666666; text-align: center;">
-                    <img src="http://placehold.it/160" alt="alt text" height="160" width="160" border="0" align="center">
-                    <br><br>
-                    Mauris urna nibh, dictum quis sollicitudin a, placerat eu ipsum.
-                    <br><br>
-                    <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%" class="button">
-                      <tr>
-                        <td style="border-radius: 3px; background: #222222; text-align: center;">
-                          <a href="http://www.google.com" style="background: #222222; border: 15px solid #222222; color: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 1; text-align: center; text-decoration: none; display: block; border-radius: 3px;">
-                          	<b>A Full Width Button</b>
-                          </a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-	                <td width="4%" style="font-size: 0;line-height: 0;">&nbsp;</td>
-                </tr>
-              </table>
-						</td>
-		      </tr>
-      		<!-- 2 x 2 grid : END -->
-				
-          <!-- Data Table : BEGIN -->
-          <tr>
-            <td style="padding: 4%;">
-							<table cellspacing="0" cellpadding="0" border="0" width="100%" style="">
+            <td width="92%" style="padding: 4%;">
+							<table cellspacing="0" cellpadding="0" border="0" width="100%">
 								<tr>
-									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; font-weight: bold; border-bottom: 1px solid #cccccc">
-										Name
+									<td valign="top" align="left" style="width:50%; padding: 10px 5px; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #fff; background-color:#333; font-weight: bold; border-bottom: 1px solid #cccccc" class="data-table-th">
+										Naziv
 									</td>
-									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; font-weight: bold; border-bottom: 1px solid #cccccc">
-										Date
+									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #fff; background-color:#333; font-weight: bold; border-bottom: 1px solid #cccccc" class="data-table-th">
+										Kol.
 									</td>
-									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; font-weight: bold; border-bottom: 1px solid #cccccc">
-										Location
+									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #fff; background-color:#333; font-weight: bold; border-bottom: 1px solid #cccccc" class="data-table-th">
+										JM
+									</td>
+									<td valign="top" align="right" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #fff; background-color:#333; font-weight: bold; border-bottom: 1px solid #cccccc" class="data-table-th">
+										Cena
 									</td>
 								</tr>
 								<tr>
-									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee">
-										Event Name
+									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td-title">
+										Proizvod 1
 									</td>
-									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee">
-										1-Jan-2014
+									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+										12
 									</td>
-									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee">
-										New York, NY
+									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+										m2
 									</td>
+									<td valign="top" align="right" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+										3454,00
+									</td>
+									<td style="display: none;" class="data-table-mobile-divider">&nbsp;</td>
 								</tr>
 								<tr>
-									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee">
-										Another Name
+									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td-title">
+										Proizvod 2
 									</td>
-									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee">
-										8-Jul-2014
+									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+									 10
 									</td>
-									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee">
-										Phoenix, AZ
+									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+										kom
 									</td>
+									<td valign="top" align="right" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+										40061,30
+									</td>
+									<td style="display: none;" class="data-table-mobile-divider">&nbsp;</td>
 								</tr>
 								<tr>
-									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee">
-										A Third Name
+							<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td-title">
+										
 									</td>
-									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee">
-										21-Dec-2014
+									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+									 
 									</td>
-									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee">
-										Seattle, WA
+									<td valign="bottom" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+										<strong>Transport</strong>
 									</td>
+									<td valign="bottom" align="right" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+										1000,00
+									</td>
+									
 								</tr>
+								<tr>
+									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td-title">
+												
+											</td>
+											<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+											 
+											</td>
+											<td valign="bottom" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+												<strong>Ukupno</strong>
+											</td>
+											<td valign="bottom" align="right" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #034ea2; border-bottom: 1px solid #eeeeee" class="data-table-td">
+												<strong>20654.66 RSD</strong>
+											</td>
+											<td style="display: none;" class="data-table-mobile-divider">&nbsp;</td>
+											
+										</tr>
 							</table>
             </td>
           </tr>
-          <!-- Data Table : END -->
+					<!-- Data Table : END -->
+					<tr>
+						<td style="padding: 4%; font-family: sans-serif; font-size: 14px; line-height: 1; color: #666666; text-align:center">
+							<a href="#"><img src="http://www.enmongroup.com/data/webshopSr/fb.png" width="30px" height="30px"/></a>
+							<a href="#"><img src="http://www.enmongroup.com/data/webshopSr/instagram.png" width="30px" height="30px"/></a>
+						</td>
+					</tr>
+      	<!-- Full Width, Fluid Column : BEGIN -->
+				<tr>
+					<td style="padding: 4%; font-family: sans-serif; font-size: 14px; line-height: 1; color: #666666; text-align:center">
+						Za sve dodatne informacije možete kontaktirati webshop podršku na 011 785 60 34.
+					</td>
+				</tr>
+				<!-- Full Width, Fluid Column : END -->
 
         </table>
         <!-- Main Email Body : END -->
@@ -253,25 +301,17 @@
     <!-- Footer : BEGIN -->
     <tr>
       <td style="text-align:center; padding:4% 0; font-family:sans-serif; font-size:13px; line-height:1.2; color:#666666;">
-        You received this email because you opted in to our newsletter.
+        Ovaj email ste dobili jer je ova email adresa upisana kao kontakt za porudžbinu na ENMON web prodavnici.
         <br><br>
-        Company Name &bull; <span class="mobile-link--footer">23 Fake Street, SpringField, Oregon 97477 US</span> &bull; <span class="mobile-link--footer">(123) 456-7890</span>
+				ENMON d.o.o &bull; <span class="mobile-link--footer">Bulevar Oslobođenja 205</span> &bull; <span class="mobile-link--footer">011 785 60 34</span>
         <br><br>
-        <unsubscribe style="color:#666666; text-decoration:underline;">unsubscribe</unsubscribe>
+        
       </td>
     </tr>
     <!-- Footer : END -->
         
   </table>
   <!-- Email wrapper : END -->
-
-  <!-- End of Outlook-specific wrapper : BEGIN -->
-	<!--[if (gte mso 9)|(IE)]>
-      </td>
-    </tr>
-  </table>
-  <![endif]-->
-  <!-- End of Outlook-specific wrapper : END -->
 
 </td></tr></table>
 </body>
