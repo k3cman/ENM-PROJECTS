@@ -76,7 +76,7 @@
 		}
 
 		/* Media Queries */
-    @media screen and (max-device-width: 600px), screen and (max-width: 600px) {
+    @media screen and (max-device-width: 900px), screen and (max-width: 900px) {
 			
 			/* What it does: Overrides email-container's desktop width and forces it into a 100% fluid width. */
 			.email-container {
@@ -152,7 +152,7 @@
 	<!-- Visually Hidden Preheader Text : END -->
 
   <!-- Email wrapper : BEGIN -->
-  <table border="0" width="600" cellpadding="0" cellspacing="0" align="center" style="width:600px; margin: auto;" class="email-container">
+  <table border="0" width="900" cellpadding="0" cellspacing="0" align="center" style="width:900px; margin: auto;" class="email-container">
     <tr>
     	<td>
 
@@ -189,18 +189,25 @@
           <!-- Full Width, Fluid Column : BEGIN -->
           <tr>
             <td style="padding: 4%; font-family: sans-serif; font-size: 14px; line-height: 1; color: #666666;">
-							Poštovani (IME), <br><br>
+							Poštovani {{Ime i prezime }}, <br><br>
 							Ovo je automatski generisan email za vašu ENMON porudžbinu od dana 01/06/2018.
-							<br><br>Vašu porudžbinu možete pratiti na <a href="#">ovom linku</a>.
+							<br><br>Vašu porudžbinu možete pratiti na <a href="#">ovom linku</a>. <br><br>
+							Podatci koje ste upisali u porudžbenici: <br><br>
+							Ime i prezime: <strong>{{Ime i prezime}} </strong><br>
+							Email adresa: <strong>{{ email }}</strong> <br>
+							Vaša adresa: <strong>{{Adresa}}</strong> <br>
+							Adresa za dostavu : <strong>{{Adresa za dostavu}}</strong> <br><br>
+							<em>ISHOD PLAĆANJA</em>: <strong>{{zadužen/nije zadužen}}</strong> 
             </td>
           </tr>
           <!-- Full Width, Fluid Column : END -->
       		<!-- Data Table : BEGIN -->
           <tr>
             <td width="92%" style="padding: 4%;">
+							<strong style="font-family:sans-serif">Podaci o narudžbini</strong>
 							<table cellspacing="0" cellpadding="0" border="0" width="100%">
 								<tr>
-									<td valign="top" align="left" style="width:50%; padding: 10px 5px; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #fff; background-color:#333; font-weight: bold; border-bottom: 1px solid #cccccc" class="data-table-th">
+									<td valign="top" align="left" style="width:35%; padding: 10px 5px; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #fff; background-color:#333; font-weight: bold; border-bottom: 1px solid #cccccc" class="data-table-th">
 										Naziv
 									</td>
 									<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #fff; background-color:#333; font-weight: bold; border-bottom: 1px solid #cccccc" class="data-table-th">
@@ -244,6 +251,20 @@
 									<td style="display: none;" class="data-table-mobile-divider">&nbsp;</td>
 								</tr>
 								<tr>
+										<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td-title">
+										
+											</td>
+											<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+											 
+											</td>
+											<td valign="bottom" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+												<strong>PDV</strong>
+											</td>
+											<td valign="bottom" align="right" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td">
+												20% od ukupne cene
+											</td>
+											
+										</tr>
 							<td valign="top" align="left" style="padding: 10px 0; font-family: sans-serif; font-size: 15px; line-height: 1.3; color: #333333; border-bottom: 1px solid #eeeeee" class="data-table-td-title">
 										
 									</td>
@@ -279,6 +300,11 @@
           </tr>
 					<!-- Data Table : END -->
 					<tr>
+							<td style="padding: 4%; font-family: sans-serif; font-size: 14px; line-height: 1; color: #666666; text-align:center">
+							<em> Jedinstveni broj vaše porudžbine je <strong> 12345678 </strong></em>
+							</td>
+						</tr>
+					<tr>
 						<td style="padding: 4%; font-family: sans-serif; font-size: 14px; line-height: 1; color: #666666; text-align:center">
 							<a href="#"><img src="http://www.enmongroup.com/data/webshopSr/fb.png" width="30px" height="30px"/></a>
 							<a href="#"><img src="http://www.enmongroup.com/data/webshopSr/instagram.png" width="30px" height="30px"/></a>
@@ -303,7 +329,7 @@
       <td style="text-align:center; padding:4% 0; font-family:sans-serif; font-size:13px; line-height:1.2; color:#666666;">
         Ovaj email ste dobili jer je ova email adresa upisana kao kontakt za porudžbinu na ENMON web prodavnici.
         <br><br>
-				ENMON d.o.o &bull; <span class="mobile-link--footer">Bulevar Oslobođenja 205</span> &bull; <span class="mobile-link--footer">011 785 60 34</span>
+				ENMON d.o.o &bull; <span class="mobile-link--footer">Bulevar Oslobođenja 205</span> &bull; <span class="mobile-link--footer">011 785 60 34</span> &bull;  <span class="mobile-link--footer">PIB:101821921</span>
         <br><br>
         
       </td>
