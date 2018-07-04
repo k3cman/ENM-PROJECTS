@@ -1,0 +1,16 @@
+{
+  "name": "orders-api",
+  "version": "1.0.0",
+  "description": "Api for retriving orders, and storing them in mongoDB",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js"
+  },
+  "author": "Nemanja Kecman",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0"
+  }
+}
