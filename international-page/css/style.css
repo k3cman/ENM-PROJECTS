@@ -22,7 +22,14 @@
     height:800px;
     text-align: center;
     background-size:cover;
-    background-image:url('../img/bg.jpg');
+    background-image:url('../img/calacata-render-01.jpg');
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+}
+
+.bg:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 
@@ -42,9 +49,15 @@
     font-weight:700;
     color:#fff;
     text-shadow: 3px 5px 10px rgba(0,0,0,0.8);
-    padding-top:300px;
+    /* padding-top:300px; */
     padding-bottom:10px;
+    padding-top:20px;
 }
+
+.title {
+    padding-top:280px;
+}
+
 .buttons{
     text-align:center;
 }
@@ -66,11 +79,15 @@
 .btn-blue{
     background-color:rgba(32,91,156,0.8);
     color:#fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  
 }
 
 .btn-blue:hover{
     background-color:rgba(32,91,156,1);
     color:#fff;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
 }
 
@@ -95,12 +112,15 @@
 
 .flags img{
     height:40px;
-    opacity:0.7;
+    opacity:1;
     border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .flags img:hover{
     opacity:1;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .flags a{
